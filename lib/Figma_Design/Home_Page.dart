@@ -45,7 +45,7 @@ class _Home_PageState extends State<Home_Page> {
                 width: 1.0,
               ),
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(0.01.sh),
               boxShadow: [
                 BoxShadow(
                   blurRadius: 10,
@@ -53,8 +53,8 @@ class _Home_PageState extends State<Home_Page> {
                 ),
               ],
             ),
-            height: 0.17.sh,
-            width: 0.25.sw,
+            height: 0.20.sh,
+            width: 0.30.sw,
             child: ElevatedButton(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +62,7 @@ class _Home_PageState extends State<Home_Page> {
                   Image(
                     // alignment: Alignment.topCenter,
                     image: AssetImage(imageAsset),
-                    width: 0.15.sw,
+                    width: 0.12.sw,
                     height: 0.09.sh,
                   ),
                   Text(
@@ -71,7 +71,7 @@ class _Home_PageState extends State<Home_Page> {
                     style: TextStyle(
                       color: Colors.black,
                       // fontSize: FixedHeight / 51,
-                      fontSize: 0.025.sw,
+                      fontSize: 0.012.sh,
 
                       fontWeight: FontWeight.bold,
                       // height: 0.0015.sh,
@@ -80,7 +80,7 @@ class _Home_PageState extends State<Home_Page> {
                 ],
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(255, 255, 255, 0.9),
+                backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),

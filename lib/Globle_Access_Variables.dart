@@ -30,10 +30,10 @@ Widget buildRowWidget(String title, TextEditingController controller,
         // SizedBox(
         //   width: FixedWidth * 0.12,
         // ),
-        SizedBox(width: 0.03.sh),
+        SizedBox(width: 0.01.sw),
         Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.fromLTRB(FixedHeight * 0.01, 0, 0, 0),
+          padding: EdgeInsets.fromLTRB(0.01.sw, 0, 0, 0),
           height: 0.049.sh,
           width: 0.17.sh,
           decoration: BoxDecoration(
@@ -42,7 +42,7 @@ Widget buildRowWidget(String title, TextEditingController controller,
               width: 1.1,
             ),
             color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(0.02.sh),
           ),
           child: TextField(
             textAlign: TextAlign.left,
@@ -59,7 +59,7 @@ Widget buildRowWidget(String title, TextEditingController controller,
           ),
         ),
 
-        SizedBox(width: 0.01.sh),
+        SizedBox(width: 0.01.sw),
 
         //Sub title Text
         Container(
@@ -84,7 +84,7 @@ Widget buildRowComapreWidget(String title, TextEditingController controller,
     child: Row(
       children: [
         Container(
-          width: 0.15.sh,
+          width: 0.15.sw,
           // alignment: Alignment.centerLeft,
           child: Text(
             title,
@@ -98,7 +98,7 @@ Widget buildRowComapreWidget(String title, TextEditingController controller,
         // SizedBox(width: FixedWidth * 0.25),
         Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.fromLTRB(FixedHeight * 0.01, 0, 0, 0),
+          padding: EdgeInsets.fromLTRB( 0.01.sw, 0, 0, 0),
           height: 0.045.sh,
           width: 0.28.sw,
           decoration: BoxDecoration(

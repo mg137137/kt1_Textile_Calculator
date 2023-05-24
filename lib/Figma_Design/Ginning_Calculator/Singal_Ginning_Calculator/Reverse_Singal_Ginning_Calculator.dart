@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Ginning_Calculator/Compare_Ginning_Calculator/Home_Compare_Ginning_Calculator.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -209,12 +210,12 @@ class _Reverse_Singal_Ginning_CalculatorState
         double FixedHeight_Between_Input_Text_Field = FixedHeight * 0.008;
         return Container(
           padding: EdgeInsets.fromLTRB(
-              FixedHeight * 0.02, FixedHeight * 0.01, FixedHeight * 0.02, 0),
+              0.02.sw, 0.01.sh,0.02.sw, 0),
           width: FixedHeight,
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(FixedHeight * 0.02, 0, 0, 0),
+                padding: EdgeInsets.fromLTRB(0.02.sw, 0, 0, 0),
                 child: Column(
                   children: [
                     //Kapas
