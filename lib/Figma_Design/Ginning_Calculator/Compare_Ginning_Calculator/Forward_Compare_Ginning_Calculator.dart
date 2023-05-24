@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Globle_Access_Variables.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -219,9 +220,9 @@ class _Forward_Compare_Ginning_CalculatorState
         SizedBox(height: FixedHeight * 0.01),
         Container(
           padding:
-              EdgeInsets.fromLTRB(FixedHeight * 0.01, 0, FixedHeight * 0.02, 0),
+              EdgeInsets.fromLTRB(0.02.sw, 0,0.02.sw, 0),
           margin: EdgeInsets.fromLTRB(
-              FixedHeight * 0.015, 0, FixedHeight * 0.015, 0),
+              0.015.sw, 0, 0.015.sw, 0),
           // width: FixedHeight*0.6,
           decoration: BoxDecoration(
               boxShadow: [
@@ -248,7 +249,7 @@ class _Forward_Compare_Ginning_CalculatorState
               color: Colors.white10,
               borderRadius: BorderRadius.circular(FixedHeight * 0.015)),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
@@ -273,7 +274,7 @@ class _Forward_Compare_Ginning_CalculatorState
                       '₹/20kg', FixedHeight, FixedWidth),
                 ],
               ),
-              SizedBox(width: FixedHeight * 0.01),
+              SizedBox(width: 0.01.sw),
               Column(
                 children: [
                   SizedBox(
@@ -424,9 +425,9 @@ class _Forward_Compare_Ginning_CalculatorState
         SizedBox(height: FixedHeight * 0.01),
         Container(
           padding:
-              EdgeInsets.fromLTRB(FixedHeight * 0.01, 0, FixedHeight * 0.02, 0),
+              EdgeInsets.fromLTRB(0.02.sw, 0,0.02.sw, 0),
           margin: EdgeInsets.fromLTRB(
-              FixedHeight * 0.015, 0, FixedHeight * 0.015, 0),
+              0.015.sw, 0, 0.015.sw, 0),
           // width: FixedHeight*0.6,
           decoration: Box_2_Gray_Decoration(),
           child: Row(

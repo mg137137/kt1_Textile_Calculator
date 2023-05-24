@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen>
                   alignment: Alignment.bottomCenter,
                   child: SizedBox(
                     width: 1.sw,
-                    height: 0.14.sh,
+                    height: 0.16.sh,
                     child: Column(
                       children: [
                         Text(
@@ -108,7 +108,7 @@ class _SplashScreenState extends State<SplashScreen>
                         Image.asset(
                           'assets/kingtext.png',
                           height: 0.05.sh,
-                          width: 0.5.sh,
+                          width: 0.5.sw,
                           // width: 0.08.sh,
                         ),
                       ],

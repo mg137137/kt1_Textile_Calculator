@@ -13,11 +13,11 @@ Widget buildRowWidget(String title, TextEditingController controller,
   return Container(
     margin: EdgeInsets.fromLTRB(0, 0.007.sh, 0, 0),
     child: Row(
-      // mainAxisAlignment: MainAxisAlignment.center,
+       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // SizedBox(width: 0.01.sh),
         Container(
-          width: 0.15.sh,
+
           child: Text(
             title,
             style: TextStyle(
@@ -32,45 +32,54 @@ Widget buildRowWidget(String title, TextEditingController controller,
         // ),
         SizedBox(width: 0.01.sw),
         Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.fromLTRB(0.01.sw, 0, 0, 0),
-          height: 0.049.sh,
-          width: 0.17.sh,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 1.1,
-            ),
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(0.02.sh),
-          ),
-          child: TextField(
-            textAlign: TextAlign.left,
-            controller: controller,
-            style: TextStyle(fontSize: 0.025.sh, color: Colors.black),
-            decoration: InputDecoration(
-              border: InputBorder.none,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.01.sw, 0, 0, 0),
+                    height: 0.050.sh,
+                    width: 0.17.sh,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.1,
+                      ),
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(0.02.sh),
+                    ),
+                    child: TextField(
+                      textAlign: TextAlign.left,
+                      controller: controller,
+                      style: TextStyle(fontSize: 0.025.sh, color: Colors.black),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
 
-              // hintText: 'Kapas',
-              // contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            ),
-            keyboardType: TextInputType.number,
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        // hintText: 'Kapas',
+                        // contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      ),
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(width: 0.02.sw,),
+              Container(
+                width: 0.10.sh,
+                child: Text(
+                  subtitle,
+                  style: TextStyle(fontSize: 0.012.sh, color: Colors.black),
+                ),
+              ),
+            ],
           ),
         ),
 
-        SizedBox(width: 0.01.sw),
+        //
 
         //Sub title Text
-        Container(
-          alignment: Alignment.centerLeft,
-          // height: FixedHeight * 0.045,
-          // width: FixedWidth * 0.24,
-          child: Text(
-            subtitle,
-            style: TextStyle(fontSize: 0.012.sh, color: Colors.black),
-          ),
-        ),
       ],
     ),
   );
@@ -82,9 +91,9 @@ Widget buildRowComapreWidget(String title, TextEditingController controller,
   return Container(
     margin: EdgeInsets.fromLTRB(0, 0.007.sh, 0, 0),
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          width: 0.15.sw,
           // alignment: Alignment.centerLeft,
           child: Text(
             title,
@@ -95,9 +104,7 @@ Widget buildRowComapreWidget(String title, TextEditingController controller,
             ),
           ),
         ),
-        // SizedBox(width: FixedWidth * 0.25),
         Container(
-          alignment: Alignment.center,
           padding: EdgeInsets.fromLTRB( 0.01.sw, 0, 0, 0),
           height: 0.045.sh,
           width: 0.28.sw,

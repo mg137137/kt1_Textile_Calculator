@@ -49,6 +49,7 @@ class _Home_Singal_Ginning_CalculatorState
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
     // double FixedHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -71,7 +72,7 @@ class _Home_Singal_Ginning_CalculatorState
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(0.05.sh, 0, 0.05.sh, 0.01.sh),
+                margin: EdgeInsets.fromLTRB(0.05.sw, 0, 0.05.sw, 0.01.sh),
                 height: 0.05.sh,
                 width: 1.sw,
                 decoration: BoxDecoration(
@@ -109,7 +110,7 @@ class _Home_Singal_Ginning_CalculatorState
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(
-                            0.005.sh, 0.005.sh, 0.005.sh, 0.005.sh),
+                            0.003.sw, 0.003.sh, 0.003.sw, 0.003.sh),
                         child: TextButton(
                           onPressed: () => _onButtonPressed(false),
                           style: TextButton.styleFrom(

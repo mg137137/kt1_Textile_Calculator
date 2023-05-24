@@ -55,37 +55,40 @@ class _Home_PageState extends State<Home_Page> {
             ),
             height: 0.20.sh,
             width: 0.30.sw,
-            child: ElevatedButton(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    // alignment: Alignment.topCenter,
-                    image: AssetImage(imageAsset),
-                    width: 0.12.sw,
-                    height: 0.09.sh,
-                  ),
-                  Text(
-                    buttonText,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      // fontSize: FixedHeight / 51,
-                      fontSize: 0.012.sh,
-
-                      fontWeight: FontWeight.bold,
-                      // height: 0.0015.sh,
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      // alignment: Alignment.topCenter,
+                      image: AssetImage(imageAsset),
+                      width: 0.12.sw,
+                      height: 0.12.sh,
                     ),
-                  ),
-                ],
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                    Text(
+                      buttonText,
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: Colors.black,
+                        // fontSize: FixedHeight / 51,
+
+                        fontWeight: FontWeight.bold,
+                        fontSize: 0.012.sh
+
+                      ),
+                    ),
+                  ],
                 ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0.01.sh),
+                  ),
+                ),
+                onPressed: onPressed,
               ),
-              onPressed: onPressed,
             ),
           );
         }
