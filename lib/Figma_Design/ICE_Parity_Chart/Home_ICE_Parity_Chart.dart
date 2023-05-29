@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/ICE_Parity_Chart/MCX.dart';
 import 'package:kt1_textile_calculator/Figma_Design/ICE_Parity_Chart/Physical_Cotton.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../Globaly Accesible/Globle_Access_Variables.dart';
 
 class Home_ICE_Parity_Chart extends StatefulWidget {
   const Home_ICE_Parity_Chart({Key? key}) : super(key: key);

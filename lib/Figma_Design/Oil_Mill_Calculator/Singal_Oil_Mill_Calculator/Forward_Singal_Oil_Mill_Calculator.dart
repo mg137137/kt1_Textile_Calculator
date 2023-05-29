@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../../Globaly Accesible/Globle_Access_Variables.dart';
 
 class Forward_Singal_Oil_Mill_Calculator extends StatefulWidget {
   const Forward_Singal_Oil_Mill_Calculator({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kt1_textile_calculator/Globle_Access_Variables.dart';
+import 'package:kt1_textile_calculator/Globaly%20Accesible/Globle_Access_Variables.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class Reverse_Compare_Ginning_Calculator extends StatefulWidget {

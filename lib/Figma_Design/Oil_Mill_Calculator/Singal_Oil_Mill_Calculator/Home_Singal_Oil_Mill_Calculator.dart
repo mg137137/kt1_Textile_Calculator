@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Oil_Mill_Calculator/Singal_Oil_Mill_Calculator/Forward_Singal_Oil_Mill_Calculator.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Oil_Mill_Calculator/Singal_Oil_Mill_Calculator/Reverse_Singal_Oil_Mill_Calculator.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../../Globaly Accesible/Globle_Access_Variables.dart';
 
 class Home_Singal_Oil_Mill_Calculator extends StatefulWidget {
   const Home_Singal_Oil_Mill_Calculator({Key? key}) : super(key: key);

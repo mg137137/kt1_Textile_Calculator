@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Exports_Calculation/Home_Export_Calculation.dart';
 
-import '../Globle_Access_Variables.dart';
+import '../Globaly Accesible/Globle_Access_Variables.dart';
 import 'Ginning_Calculator/Singal_Ginning_Calculator/Home_Singal_Ginning_Calculator.dart';
 import 'ICE_Parity_Chart/Home_ICE_Parity_Chart.dart';
 import 'Oil_Mill_Calculator/Singal_Oil_Mill_Calculator/Home_Singal_Oil_Mill_Calculator.dart';
@@ -71,13 +71,11 @@ class _Home_PageState extends State<Home_Page> {
                       buttonText,
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                        color: Colors.black,
-                        // fontSize: FixedHeight / 51,
+                          color: Colors.black,
+                          // fontSize: FixedHeight / 51,
 
-                        fontWeight: FontWeight.bold,
-                        fontSize: 0.012.sh
-
-                      ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 0.012.sh),
                     ),
                   ],
                 ),

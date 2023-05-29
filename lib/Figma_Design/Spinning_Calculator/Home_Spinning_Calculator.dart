@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../Globaly Accesible/Globle_Access_Variables.dart';
 import 'Loss_Yarn_Spinning_Calulator.dart';
 import 'Profit_Yarn_Spinning_Calulator.dart';
 

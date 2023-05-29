@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Ginning_Calculator/Compare_Ginning_Calculator/Forward_Compare_Ginning_Calculator.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../../Globaly Accesible/Globle_Access_Variables.dart';
 import 'Reverse_Compare_Ginning_Calculator.dart';
 
 class Home_Compare_Ginning_Calculator extends StatefulWidget {

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../Globaly Accesible/Globle_Access_Variables.dart';
 
 class Profit_Yarn_Spinning_Calculator extends StatefulWidget {
   const Profit_Yarn_Spinning_Calculator({Key? key}) : super(key: key);

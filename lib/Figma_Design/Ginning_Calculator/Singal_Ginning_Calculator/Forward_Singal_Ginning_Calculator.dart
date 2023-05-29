@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../../Globaly Accesible/Buttons.dart';
+import '../../../Globaly Accesible/Row widget with 3 items.dart';
+import '../../../Globaly Accesible/Screen Size Varibles.dart';
+import '../../../Globaly Accesible/Stream Builder For Results.dart';
 import '../Compare_Ginning_Calculator/Home_Compare_Ginning_Calculator.dart';
 
 class Forward_Singal_Ginning_Calculator extends StatefulWidget {
@@ -89,195 +91,107 @@ class _Forward_Singal_Ginning_CalculatorState
 
   @override
   Widget build(BuildContext context) {
-    //
-    // double FixedHeight_InputField_Container = FixedHeight * 0.05;
-    // double FixedWidth_InputField_Container = FixedHeight * 0.17;
-    //
-    //
-    // double FixedWidth_Padding_Input_Field_Sub_Text = FixedHeight * 0.02;
-
-    Decoration Input_Field_Gray_Container_Background() {
-      return BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 1.1,
-        ),
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.0),
-      );
-    }
-
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        double FixedHeight = MediaQuery.of(context).size.height;
-        double FixedWidth = constraints.maxWidth;
-        //
-        // double FixedHeight_Between_Input_Text_Field = FixedHeight * 0.008;
-        return Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+    // double FixedHeight_Between_Input_Text_Field = FixedHeight * 0.008;
+    return Container(
+      child: Column(
+        children: [
+          // Page Main Content
+          Column(
             children: [
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.fromLTRB(0.08.sw, 0.01.sh, 0.01.sw, 0.01.sh),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //Kapas
-                    buildRowWidget('Kapas', inputkapas1, '₹/20kg', FixedHeight,
-                        FixedWidth),
-
-                    // Expense
-                    buildRowWidget('Expense', inputexpense1, '₹/20kg',
-                        FixedHeight, FixedWidth),
-
-                    // Cotton Seed
-                    buildRowWidget('Cotton Seed', inputkapasia1, '₹/20kg',
-                        FixedHeight, FixedWidth),
-
-                    // Out Turn / Utaro
-                    buildRowWidget('Out Turn / Utaro', inpututaro1,
-                        'Percentage %', FixedHeight, FixedWidth),
-
-                    // Shortage / Ghati
-                    buildRowWidget('Shortage / Ghati', inputghati1,
-                        'Percentage %', FixedHeight, FixedWidth),
-                  ],
-                ),
+              //Kapas
+              GlobalRowWidget(
+                height: Global_Singal_Textfied_Height,
+                width: Global_Singal_Textfied_Width,
+                title: 'Kapass',
+                controller: inputkapas1,
+                subtitle: '₹/20kg',
               ),
-              Container(
-                margin: EdgeInsets.fromLTRB(FixedWidth * 0.01,
-                    FixedHeight * 0.01, FixedWidth * 0.01, FixedHeight * 0.01),
-                padding: EdgeInsets.fromLTRB(
-                    FixedWidth * 0.02,
-                    FixedHeight * 0.005,
-                    FixedWidth * 0.02,
-                    FixedHeight * 0.005),
-                width: FixedWidth * 0.9,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1.0,
-                  ),
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(FixedHeight * 0.02),
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Cotton Cost ',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    SizedBox(
-                      width: FixedWidth * 0.02,
-                    ),
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(
-                            FixedHeight * 0.001,
-                            FixedHeight * 0.004,
-                            FixedHeight * 0.001,
-                            FixedHeight * 0.01),
-                        height: FixedHeight * 0.045,
-                        width: FixedWidth * 0.6,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1.0,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: StreamBuilder<int>(
-                          stream: result_final_output_padtar11.stream,
-                          builder: (BuildContext context,
-                              AsyncSnapshot<int> snapshot) {
-                            if (snapshot.hasData) {
-                              return GradientText(
-                                '${snapshot.data}' + ' ₹/Khandi',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: FixedHeight * 0.03,
-                                    fontWeight: FontWeight.bold),
-                                colors: [
-                                  Colors.black,
-                                  Colors.teal,
-                                  Colors.red,
-                                ],
-                              );
-                            } else {
-                              return Text('0');
-                            }
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: FixedHeight * 0.01),
-                height: FixedHeight * 0.04,
-                width: FixedWidth * 0.4,
-                child: ElevatedButton(
-                    child: Text(
-                      'Reset',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: FixedHeight * 0.025),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(35, 35, 35, 0.9),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // <-- Radius
-                      ),
-                    ),
-                    onPressed: () {
-                      inputkapas1.clear();
-                      inputexpense1.clear();
-                      inputkapasia1.clear();
-                      inpututaro1.clear();
-                      inputghati1.clear();
 
-                      focusnodekapas1.requestFocus();
-                    }),
+              // Expense
+              GlobalRowWidget(
+                height: Global_Singal_Textfied_Height,
+                width: Global_Singal_Textfied_Width,
+                title: 'Expense',
+                controller: inputexpense1,
+                subtitle: '₹/20kg',
               ),
-              SizedBox(height: FixedHeight * 0.005),
-              Container(
-                height: FixedHeight * 0.05,
-                width: FixedHeight * 0.4,
-                child: ElevatedButton(
-                    child: GradientText(
-                      'Compare',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: FixedHeight * 0.025),
-                      colors: [
-                        Colors.blue,
-                        Colors.red,
-                        Colors.teal,
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(35, 35, 35, 0.9),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // <-- Radius
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  Home_Compare_Ginning_Calculator(
-                                    for_or_reverse: true,
-                                  )));
-                    }),
+
+              // Cotton Seed
+              GlobalRowWidget(
+                height: Global_Singal_Textfied_Height,
+                width: Global_Singal_Textfied_Width,
+                title: 'Cotton Seed',
+                controller: inputkapasia1,
+                subtitle: '₹/20kg',
+              ),
+
+              // Out Turn / Utaro
+              GlobalRowWidget(
+                height: Global_Singal_Textfied_Height,
+                width: Global_Singal_Textfied_Width,
+                title: 'Out Turn / Utaro',
+                controller: inpututaro1,
+                subtitle: 'Percentage %',
+              ),
+
+              // Shortage / Ghati
+              GlobalRowWidget(
+                height: Global_Singal_Textfied_Height,
+                width: Global_Singal_Textfied_Width,
+                title: 'Shortage / Ghati',
+                controller: inputexpense1,
+                subtitle: 'Percentage %',
               ),
             ],
           ),
-        );
-      },
+
+          SizedBox(height: 0.01.sh),
+          // Stram result
+
+          Global_Stream_Builder_For_Results(
+            stream: result_final_output_padtar11.stream,
+            substreamtext: 'Rs/Khandi',
+            streamtitletext: 'Cotton Cost',
+          ),
+
+          SizedBox(height: 0.01.sh),
+
+          // Reset Button
+          Global_Button_Simple_Text(
+            onPressed: () {
+              inputkapas1.clear();
+              inputexpense1.clear();
+              inputkapasia1.clear();
+              inpututaro1.clear();
+              inputghati1.clear();
+
+              focusnodekapas1.requestFocus();
+            },
+            buttontext: 'Reset',
+            height: Global_Singal_Reset_Button_Height,
+            width: Global_Singal_Reset_Button_Width,
+          ),
+
+          SizedBox(height: 0.01.sh),
+
+          //Compare Button
+          Global_Button_Gradient_Text(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home_Compare_Ginning_Calculator(
+                    for_or_reverse: true,
+                  ),
+                ),
+              );
+            },
+            buttontext: 'Compare',
+            height: Global_Singal_Comare_Button_Height,
+            width: Global_Singal_Comare_Button_Width,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -13,11 +13,10 @@ Widget buildRowWidget(String title, TextEditingController controller,
   return Container(
     margin: EdgeInsets.fromLTRB(0, 0.007.sh, 0, 0),
     child: Row(
-       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // SizedBox(width: 0.01.sh),
         Container(
-
           child: Text(
             title,
             style: TextStyle(
@@ -65,7 +64,9 @@ Widget buildRowWidget(String title, TextEditingController controller,
                   ),
                 ],
               ),
-              SizedBox(width: 0.02.sw,),
+              SizedBox(
+                width: 0.02.sw,
+              ),
               Container(
                 width: 0.10.sh,
                 child: Text(
@@ -105,7 +106,7 @@ Widget buildRowComapreWidget(String title, TextEditingController controller,
           ),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB( 0.01.sw, 0, 0, 0),
+          padding: EdgeInsets.fromLTRB(0.01.sw, 0, 0, 0),
           height: 0.045.sh,
           width: 0.28.sw,
           decoration: BoxDecoration(

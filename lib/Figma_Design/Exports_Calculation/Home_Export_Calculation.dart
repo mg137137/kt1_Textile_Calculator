@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Exports_Calculation/Forward_Export_Calculation.dart';
 import 'package:kt1_textile_calculator/Figma_Design/Exports_Calculation/Reverse_Export_Calculation.dart';
 
-import '../../../Globle_Access_Variables.dart';
+import '../../Globaly Accesible/Globle_Access_Variables.dart';
 
 class Home_Export_Calculation extends StatefulWidget {
   const Home_Export_Calculation({Key? key}) : super(key: key);
