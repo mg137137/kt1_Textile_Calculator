@@ -183,199 +183,147 @@ class _Reverse_Singal_Oil_Mill_CalculatorState
 
   @override
   Widget build(BuildContext context) {
-    //
-    // double FixedHeight_InputField_Container = FixedHeight * 0.05;
-    // double FixedWidth_InputField_Container = FixedHeight * 0.17;
-    //
-    //
-    // double FixedWidth_Padding_Input_Field_Sub_Text = FixedHeight * 0.02;
+    return Container(
+      width: 1.sw,
+      child: Column(
+        children: [
+          Container(
+            child: Column(
+              children: [
+                //Kapas
+                buildRowWidget('Oil Cake Cost', inputkapas1, '₹/Bale', 0, 0),
 
-    Decoration Input_Field_Gray_Container_Background() {
-      return BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 1.1,
-        ),
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.0),
-      );
-    }
+                // Expense
+                buildRowWidget('Expense', inputexpense1, '₹/20kg', 0, 0),
 
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        double FixedHeight = MediaQuery.of(context).size.height;
-        double FixedWidth = constraints.maxWidth;
+                // Cotton Seed
+                buildRowWidget('Oil Rate', inputkapasia1, '₹/20kg', 0, 0),
 
-        double FixedHeight_Between_Input_Text_Field = FixedHeight * 0.008;
-        return Container(
-          padding: EdgeInsets.fromLTRB(
-              FixedHeight * 0.01, FixedHeight * 0.01, FixedHeight * 0.02, 0),
-          width: FixedHeight,
-          child: Column(
-            children: [
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.fromLTRB(0.01.sw, 0.01.sh, 0.01.sw, 0.01.sh),
-                padding: EdgeInsets.fromLTRB(FixedHeight * 0.01, 0, 0, 0),
-                child: Column(
-                  children: [
-                    //Kapas
-                    buildRowWidget('Oil Cake Cost', inputkapas1, '₹/Bale',
-                        FixedHeight, FixedWidth),
+                // Out Turn / Utaro
+                buildRowWidget('Oil', inpututaro1, 'Percentage %', 0, 0),
 
-                    // Expense
-                    buildRowWidget('Expense', inputexpense1, '₹/20kg',
-                        FixedHeight, FixedWidth),
+                // Shortage / Ghati
+                buildRowWidget('Oil Cake', inputghati1, 'Percentage %', 0, 0),
 
-                    // Cotton Seed
-                    buildRowWidget('Oil Rate', inputkapasia1, '₹/20kg',
-                        FixedHeight, FixedWidth),
-
-                    // Out Turn / Utaro
-                    buildRowWidget('Oil', inpututaro1, 'Percentage %',
-                        FixedHeight, FixedWidth),
-
-                    // Shortage / Ghati
-                    buildRowWidget('Oil Cake', inputghati1, 'Percentage %',
-                        FixedHeight, FixedWidth),
-
-                    buildRowWidget('Packing Size', inputghati1, 'Kg',
-                        FixedHeight, FixedWidth),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(FixedWidth * 0.01,
-                    FixedHeight * 0.01, FixedWidth * 0.01, FixedHeight * 0.01),
-                padding: EdgeInsets.fromLTRB(
-                    FixedWidth * 0.02,
-                    FixedHeight * 0.005,
-                    FixedWidth * 0.02,
-                    FixedHeight * 0.005),
-                width: FixedWidth * 0.9,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1.0,
-                  ),
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(FixedHeight * 0.02),
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Cotton Seed',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    SizedBox(
-                      width: FixedWidth * 0.02,
-                    ),
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(
-                            FixedHeight * 0.001,
-                            FixedHeight * 0.004,
-                            FixedHeight * 0.001,
-                            FixedHeight * 0.01),
-                        height: FixedHeight * 0.049,
-                        width: FixedWidth * 0.6,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1.0,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: StreamBuilder<int>(
-                          stream: result_final_output_padtar1.stream,
-                          builder: (BuildContext context,
-                              AsyncSnapshot<int> snapshot) {
-                            if (snapshot.hasData) {
-                              return GradientText(
-                                '${snapshot.data}' + ' ₹/20kg',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: FixedHeight * 0.03,
-                                    fontWeight: FontWeight.bold),
-                                colors: [
-                                  Colors.black,
-                                  Colors.teal,
-                                  Colors.red,
-                                ],
-                              );
-                            } else {
-                              return Text('0');
-                            }
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: FixedHeight * 0.01),
-                height: FixedHeight * 0.04,
-                width: FixedWidth * 0.4,
-                child: ElevatedButton(
-                    child: Text(
-                      'Reset',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: FixedHeight * 0.025),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(35, 35, 35, 0.9),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // <-- Radius
-                      ),
-                    ),
-                    onPressed: () {
-                      inputkapas1.clear();
-                      inputexpense1.clear();
-                      inputkapasia1.clear();
-                      inpututaro1.clear();
-                      inputghati1.clear();
-
-                      focusnodekapas1.requestFocus();
-                    }),
-              ),
-              SizedBox(height: FixedHeight * 0.005),
-              Container(
-                height: FixedHeight * 0.05,
-                width: FixedHeight * 0.4,
-                child: ElevatedButton(
-                    child: GradientText(
-                      'Compare',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: FixedHeight * 0.025),
-                      colors: [
-                        Colors.blue,
-                        Colors.red,
-                        Colors.teal,
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(35, 35, 35, 0.9),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // <-- Radius
-                      ),
-                    ),
-                    onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             Home_Compare_Ginning_Calculator(
-                      //               for_or_reverse: false,
-                      //             )));
-                    }),
-              ),
-            ],
+                buildRowWidget('Packing Size', inputghati1, 'Kg', 0, 0),
+              ],
+            ),
           ),
-        );
-      },
+          Container(
+            width: 0.9.sw,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black,
+                width: 1.0,
+              ),
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(
+              children: [
+                Text(
+                  'Cotton Seed',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black),
+                ),
+                SizedBox(
+                  width: 0.02.sh,
+                ),
+                Expanded(
+                  child: Container(
+                    height: 0.045.sh,
+                    width: 0.6.sw,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.0,
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: StreamBuilder<int>(
+                      stream: result_final_output_padtar1.stream,
+                      builder:
+                          (BuildContext context, AsyncSnapshot<int> snapshot) {
+                        if (snapshot.hasData) {
+                          return GradientText(
+                            '${snapshot.data}' + ' ₹/20kg',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                            colors: [
+                              Colors.black,
+                              Colors.teal,
+                              Colors.red,
+                            ],
+                          );
+                        } else {
+                          return Text('0');
+                        }
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 0.04.sh,
+            width: 0.4.sw,
+            child: ElevatedButton(
+                child: Text(
+                  'Reset',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(35, 35, 35, 0.9),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // <-- Radius
+                  ),
+                ),
+                onPressed: () {
+                  inputkapas1.clear();
+                  inputexpense1.clear();
+                  inputkapasia1.clear();
+                  inpututaro1.clear();
+                  inputghati1.clear();
+
+                  focusnodekapas1.requestFocus();
+                }),
+          ),
+          SizedBox(height: 0.01.sh),
+          Container(
+            height: 0.05.sh,
+            width: 0.4.sw,
+            child: ElevatedButton(
+                child: GradientText(
+                  'Compare',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 10),
+                  colors: [
+                    Colors.blue,
+                    Colors.red,
+                    Colors.teal,
+                  ],
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(35, 35, 35, 0.9),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // <-- Radius
+                  ),
+                ),
+                onPressed: () {
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             Home_Compare_Ginning_Calculator(
+                  //               for_or_reverse: false,
+                  //             )));
+                }),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -13,5 +13,5 @@ final double Global_Singal_Reset_Button_Width = 0.4.sw;
 final double Global_Singal_Comare_Button_Height = 0.05.sh;
 final double Global_Singal_Comare_Button_Width = 0.5.sw;
 
-//Appbar Size
+//Appbar Height Size
 final double Global_Appbar_Height = 0.14.sh;

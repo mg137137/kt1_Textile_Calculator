@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-import '../../../Globaly Accesible/Globle_Access_Variables.dart';
+import '../../../Globaly Accesible/Row widget with 3 items.dart';
+import '../../../Globaly Accesible/Screen Size Varibles.dart';
 
 class Forward_Singal_Oil_Mill_Calculator extends StatefulWidget {
   const Forward_Singal_Oil_Mill_Calculator({Key? key}) : super(key: key);
@@ -101,66 +101,66 @@ class _Forward_Singal_Oil_Mill_CalculatorState
           fontSize: FixedHeight * 0.023, fontWeight: FontWeight.bold);
     }
 
-    Decoration Input_Field_Gray_Container_Background() {
-      return BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 1.0,
-        ),
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(20.0),
-      );
-    }
-
-    InputDecoration Input_Field_Inner_decoration() {
-      return InputDecoration(
-        border: InputBorder.none,
-        // hintText: 'Kapas',
-        contentPadding:
-            EdgeInsets.fromLTRB(FixedWidth * 0.022, 0, 0, FixedWidth * 0.042),
-      );
-    }
-
-    TextStyle Sub_Text_Column_textStyle() {
-      // Like per/20kg,percent.....
-      return TextStyle(
-        fontSize: FixedHeight * 0.015,
-      );
-    }
-
     return Container(
-      alignment: Alignment.center,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.fromLTRB(0.02.sw, 0.01.sh, 0.01.sw, 0.01.sh),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //Kapas
-                buildRowWidget('Cotton Seed', inputkapas1, '₹/20kg',
-                    FixedHeight, FixedWidth),
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Cotton Seed',
+                  controller: inputkapas1,
+                  subtitle: '₹/20kg',
+                ),
 
                 // Expense
-                buildRowWidget('Expense', inputexpense1, '₹/20kg', FixedHeight,
-                    FixedWidth),
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Expense',
+                  controller: inputexpense1,
+                  subtitle: '₹/20kg',
+                ),
 
                 // Cotton Seed
-                buildRowWidget('Oil Rate', inputkapasia1, '₹/20kg', FixedHeight,
-                    FixedWidth),
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Oil Rate',
+                  controller: inputkapasia1,
+                  subtitle: '₹/20kg',
+                ),
 
                 // Out Turn / Utaro
-                buildRowWidget('Oil', inpututaro1, 'Percentage %', FixedHeight,
-                    FixedWidth),
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Oil',
+                  controller: inpututaro1,
+                  subtitle: 'Percentage %',
+                ),
 
                 // Shortage / Ghati
-                buildRowWidget('Oil Cake', inputghati1, 'Percentage %',
-                    FixedHeight, FixedWidth),
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Oil Cake',
+                  controller: inpututaro1,
+                  subtitle: 'Percentage %',
+                ),
 
-                buildRowWidget('Packing Size', inputghati1, 'Kgs.', FixedHeight,
-                    FixedWidth),
+                //Packing Size
+                GlobalRowWidget(
+                  height: Global_Singal_Textfied_Height,
+                  width: Global_Singal_Textfied_Width,
+                  title: 'Packing Size',
+                  controller: inputghati1,
+                  subtitle: 'Kgs.',
+                ),
               ],
             ),
           ),

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: true,
+          debugShowCheckedModeBanner: false,
           title: 'Ginning Calculato',
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
