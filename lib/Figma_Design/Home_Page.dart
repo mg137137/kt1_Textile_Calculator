@@ -283,6 +283,40 @@ class _Home_PageState extends State<Home_Page> {
                       ),
                     ],
                   ),
+                  Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   // MaterialPageRoute(
+                        //   //     builder: (context) => Delar_List_home(
+                        //   //       token: '$stoken',
+                        //   //     )),
+                        // );
+                      },
+                      borderRadius: BorderRadius.circular(10),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 50.h,
+                          width: 300.w,
+                          child: Text(
+                            'Document List',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              // fontSize: FixedHeight * 0.028,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
