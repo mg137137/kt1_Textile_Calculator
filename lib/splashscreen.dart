@@ -88,33 +88,33 @@ class _SplashScreenState extends State<SplashScreen>
                     value: _animation.value,
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: 1.sw,
-                    height: 0.16.sh,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Designed By ',
-                          style: TextStyle(
-                            fontSize: 0.02.sh,
-                            height: 0.004.sh,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                        // SizedBox(height: 0.01.sh),
-                        Image.asset(
-                          'assets/kingtext.png',
-                          height: 0.05.sh,
-                          width: 0.5.sw,
-                          // width: 0.08.sh,
-                        ),
-                      ],
-                    ),
-                  ),
-                )
+                // Align(
+                //   alignment: Alignment.bottomCenter,
+                //   child: SizedBox(
+                //     width: 1.sw,
+                //     height: 0.16.sh,
+                //     child: Column(
+                //       children: [
+                //         Text(
+                //           'Designed By ',
+                //           style: TextStyle(
+                //             fontSize: 0.02.sh,
+                //             height: 0.004.sh,
+                //             fontWeight: FontWeight.bold,
+                //             color: Colors.black,
+                //           ),
+                //         ),
+                //         // SizedBox(height: 0.01.sh),
+                //         Image.asset(
+                //           'assets/kingtext.png',
+                //           height: 0.05.sh,
+                //           width: 0.5.sw,
+                //           // width: 0.08.sh,
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),
