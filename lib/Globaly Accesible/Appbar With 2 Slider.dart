@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Globle_Access_Variables.dart';
-import 'Screen Size Varibles.dart';
 
 class Global_CustomAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -21,7 +20,7 @@ class Global_CustomAppBar extends StatelessWidget
   });
 
   @override
-  Size get preferredSize => Size.fromHeight(Global_Appbar_Height);
+  Size get preferredSize => Size.fromHeight(350.h);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class Global_CustomAppBar extends StatelessWidget
       title: Text(
         AppbarText,
         style: TextStyle(
-          fontSize: 0.025.sh,
+          fontSize: 70.sp,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),
@@ -38,16 +37,15 @@ class Global_CustomAppBar extends StatelessWidget
       elevation: 1,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(0.05.sh),
+          bottom: Radius.circular(150.sp),
         ),
       ),
       flexibleSpace: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(0.05.sw, 0, 0.05.sw, 0.01.sh),
-            height: 0.05.sh,
-            width: 1.sw,
+            margin: EdgeInsets.fromLTRB(100.w, 0, 100.w, 30.h),
+            height: 130.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               color: Colors.grey[300],
@@ -55,13 +53,8 @@ class Global_CustomAppBar extends StatelessWidget
             child: Row(
               children: [
                 Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(
-                      0.005.sw,
-                      0.005.sh,
-                      0.005.sw,
-                      0.005.sh,
-                    ),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(5.w, 5.h, 5.w, 5.h),
                     child: TextButton(
                       onPressed: () => onButtonPressed(true),
                       style: TextButton.styleFrom(
@@ -69,7 +62,7 @@ class Global_CustomAppBar extends StatelessWidget
                             ? const Color.fromRGBO(35, 35, 35, 1)
                             : Colors.transparent,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
+                          borderRadius: BorderRadius.circular(80.sp),
                         ),
                       ),
                       child: Text(
@@ -78,20 +71,15 @@ class Global_CustomAppBar extends StatelessWidget
                           color: isFirstButtonSelected
                               ? Colors.white
                               : Colors.grey[800],
-                          fontSize: 0.015.sh,
+                          fontSize: 50.sp,
                         ),
                       ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(
-                      0.003.sw,
-                      0.003.sh,
-                      0.003.sw,
-                      0.003.sh,
-                    ),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(5.w, 5.h, 5.w, 5.h),
                     child: TextButton(
                       onPressed: () => onButtonPressed(false),
                       style: TextButton.styleFrom(
@@ -99,7 +87,7 @@ class Global_CustomAppBar extends StatelessWidget
                             ? Colors.transparent
                             : const Color.fromRGBO(35, 35, 35, 1),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
+                          borderRadius: BorderRadius.circular(80.sp),
                         ),
                       ),
                       child: Text(
@@ -108,7 +96,7 @@ class Global_CustomAppBar extends StatelessWidget
                           color: isFirstButtonSelected
                               ? Colors.grey[800]
                               : Colors.white,
-                          fontSize: 0.015.sh,
+                          fontSize: 50.sp,
                         ),
                       ),
                     ),

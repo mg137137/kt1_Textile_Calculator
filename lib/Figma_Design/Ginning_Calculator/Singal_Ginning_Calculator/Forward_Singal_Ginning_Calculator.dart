@@ -25,7 +25,7 @@ class _Forward_Singal_Ginning_CalculatorState
     double store_input_kapasia1 = double.tryParse(inputkapasia1.text) ?? 0;
     double store_input_utaro1 = double.tryParse(inpututaro1.text) ?? 0;
     double store_input_ghati1 = double.tryParse(inputghati1.text) ?? 0;
-    int sum1 = (store_input_kapas1 + store_input_expense1).round().toInt();
+    double sum1 = (store_input_kapas1 + store_input_expense1);
     result_addition_inputkapas1_and_inputexpense1.add(sum1);
     double a = sum1 * 100;
     double b = 100 - store_input_utaro1 - store_input_ghati1;
@@ -33,7 +33,7 @@ class _Forward_Singal_Ginning_CalculatorState
     double d = a - c;
     double e = d / store_input_utaro1;
     double f = e * 17.78;
-    int sum2 = f.round().toInt();
+    double sum2 = double.parse(f.toStringAsFixed(2));
     diff1 = f;
     result_final_output_padtar11.add(sum2);
     setState(() {
@@ -42,10 +42,11 @@ class _Forward_Singal_Ginning_CalculatorState
     });
   }
 
-  StreamController<int> result_addition_inputkapas1_and_inputexpense1 =
-      StreamController<int>();
+  StreamController<double> result_addition_inputkapas1_and_inputexpense1 =
+      StreamController<double>();
 
-  StreamController<int> result_final_output_padtar11 = StreamController<int>();
+  StreamController<double> result_final_output_padtar11 =
+      StreamController<double>();
 
   String result_input_kapas1_and_expense1 = "0";
   String result_output_padtar1 = "0";
@@ -93,68 +94,61 @@ class _Forward_Singal_Ginning_CalculatorState
   Widget build(BuildContext context) {
     // double FixedHeight_Between_Input_Text_Field = FixedHeight * 0.008;
     return Container(
-      child: Column(
+      child: ListView(
         children: [
           // Page Main Content
-          Column(
-            children: [
-              //Kapas
-              GlobalRowWidget(
-                height: Global_Singal_Textfied_Height,
-                width: Global_Singal_Textfied_Width,
-                title: 'Kapass',
-                controller: inputkapas1,
-                subtitle: '₹/20kg',
-              ),
-
-              // Expense
-              GlobalRowWidget(
-                height: Global_Singal_Textfied_Height,
-                width: Global_Singal_Textfied_Width,
-                title: 'Expense',
-                controller: inputexpense1,
-                subtitle: '₹/20kg',
-              ),
-
-              // Cotton Seed
-              GlobalRowWidget(
-                height: Global_Singal_Textfied_Height,
-                width: Global_Singal_Textfied_Width,
-                title: 'Cotton Seed',
-                controller: inputkapasia1,
-                subtitle: '₹/20kg',
-              ),
-
-              // Out Turn / Utaro
-              GlobalRowWidget(
-                height: Global_Singal_Textfied_Height,
-                width: Global_Singal_Textfied_Width,
-                title: 'Out Turn / Utaro',
-                controller: inpututaro1,
-                subtitle: 'Percentage %',
-              ),
-
-              // Shortage / Ghati
-              GlobalRowWidget(
-                height: Global_Singal_Textfied_Height,
-                width: Global_Singal_Textfied_Width,
-                title: 'Shortage / Ghati',
-                controller: inputexpense1,
-                subtitle: 'Percentage %',
-              ),
-            ],
+          GlobalRowWidget(
+            height: Global_Singal_Textfied_Height,
+            width: Global_Singal_Textfied_Width,
+            title: 'Kappas',
+            controller: inputkapas1,
+            subtitle: '₹/20kg',
           ),
 
-          SizedBox(height: 0.01.sh),
-          // Stram result
+          // Expense
+          GlobalRowWidget(
+            height: Global_Singal_Textfied_Height,
+            width: Global_Singal_Textfied_Width,
+            title: 'Expense',
+            controller: inputexpense1,
+            subtitle: '₹/20kg',
+          ),
 
+          // Cotton Seed
+          GlobalRowWidget(
+            height: Global_Singal_Textfied_Height,
+            width: Global_Singal_Textfied_Width,
+            title: 'Cotton Seed',
+            controller: inputkapasia1,
+            subtitle: '₹/20kg',
+          ),
+
+          // Out Turn / Utaro
+          GlobalRowWidget(
+            height: Global_Singal_Textfied_Height,
+            width: Global_Singal_Textfied_Width,
+            title: 'Out Turn / Utaro',
+            controller: inpututaro1,
+            subtitle: 'Percentage %',
+          ),
+
+          // Shortage / Ghati
+          GlobalRowWidget(
+            height: Global_Singal_Textfied_Height,
+            width: Global_Singal_Textfied_Width,
+            title: 'Shortage / Ghati',
+            controller: inputghati1,
+            subtitle: 'Percentage %',
+          ),
+
+          SizedBox(height: 30.h),
+
+          // Stram result
           Global_Stream_Builder_For_Results(
             stream: result_final_output_padtar11.stream,
-            substreamtext: 'Rs/Khandi',
+            substreamtext: '₹/Khandi',
             streamtitletext: 'Cotton Cost',
           ),
-
-          SizedBox(height: 0.01.sh),
 
           // Reset Button
           Global_Button_Simple_Text(
@@ -171,8 +165,6 @@ class _Forward_Singal_Ginning_CalculatorState
             height: Global_Singal_Reset_Button_Height,
             width: Global_Singal_Reset_Button_Width,
           ),
-
-          SizedBox(height: 0.01.sh),
 
           //Compare Button
           Global_Button_Gradient_Text(

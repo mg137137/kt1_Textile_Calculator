@@ -46,80 +46,72 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        // final double fixedHeight = constraints.maxHeight;
-        // final double fixedWidth = constraints.maxWidth;
-
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: Center(
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Opacity(
-                  opacity: _animation.value,
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 0.22.sh,
-                    width: 0.22.sh,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 5,
-                          offset: Offset(0, 0),
-                        ),
-                      ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Opacity(
+              opacity: _animation.value,
+              child: Container(
+                alignment: Alignment.center,
+                height: 0.22.sh,
+                width: 0.22.sh,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 5,
+                      offset: Offset(0, 0),
                     ),
-                    child: Image.asset('assets/logo-no-background.png'),
-                  ),
+                  ],
                 ),
-                SizedBox(
-                  height: 0.20.sh,
-                  width: 0.20.sh,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2.r,
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.black38),
-                    backgroundColor: Colors.grey[300],
-                    value: _animation.value,
-                  ),
-                ),
-                // Align(
-                //   alignment: Alignment.bottomCenter,
-                //   child: SizedBox(
-                //     width: 1.sw,
-                //     height: 0.16.sh,
-                //     child: Column(
-                //       children: [
-                //         Text(
-                //           'Designed By ',
-                //           style: TextStyle(
-                //             fontSize: 0.02.sh,
-                //             height: 0.004.sh,
-                //             fontWeight: FontWeight.bold,
-                //             color: Colors.black,
-                //           ),
-                //         ),
-                //         // SizedBox(height: 0.01.sh),
-                //         Image.asset(
-                //           'assets/kingtext.png',
-                //           height: 0.05.sh,
-                //           width: 0.5.sw,
-                //           // width: 0.08.sh,
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // )
-              ],
+                child: Image.asset('assets/logo-no-background.png'),
+              ),
             ),
-          ),
-        );
-      },
+            SizedBox(
+              height: 0.20.sh,
+              width: 0.20.sh,
+              child: CircularProgressIndicator(
+                strokeWidth: 5.sp,
+                valueColor: const AlwaysStoppedAnimation<Color>(Colors.black38),
+                backgroundColor: Colors.grey[300],
+                value: _animation.value,
+              ),
+            ),
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+            //   child: SizedBox(
+            //     width: 1.sw,
+            //     height: 0.16.sh,
+            //     child: Column(
+            //       children: [
+            //         Text(
+            //           'Designed By ',
+            //           style: TextStyle(
+            //             fontSize: 0.02.sh,
+            //             height: 0.004.sh,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.black,
+            //           ),
+            //         ),
+            //         // SizedBox(height: 0.01.sh),
+            //         Image.asset(
+            //           'assets/kingtext.png',
+            //           height: 0.05.sh,
+            //           width: 0.5.sw,
+            //           // width: 0.08.sh,
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // )
+          ],
+        ),
+      ),
     );
   }
 }
