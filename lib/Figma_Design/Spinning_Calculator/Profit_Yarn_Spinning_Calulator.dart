@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../Globaly Accesible/Buttons.dart';
 import '../../Globaly Accesible/Row widget with 3 items.dart';
 import '../../Globaly Accesible/Screen Size Varibles.dart';
-import '../../Globaly Accesible/Stream Builder For Results.dart';
+import '../../Globaly Accesible/Spinning answer with stream builder.dart';
 
 class Profit_Yarn_Spinning_Calculator extends StatefulWidget {
   const Profit_Yarn_Spinning_Calculator({Key? key}) : super(key: key);
@@ -90,100 +90,155 @@ class _Profit_Yarn_Spinning_CalculatorState
 
   @override
   Widget build(BuildContext context) {
-    double FixedHeight = MediaQuery.of(context).size.height;
-    double FixedWidth = MediaQuery.of(context).size.width;
-
-    var result_final_output_padtar1;
     return Container(
-      child: ListView(
-        children: [
-          GlobalRowWidget(
-            height: Global_Singal_Textfied_Height,
-            width: Global_Singal_Textfied_Width,
-            title: 'Cotton Rate',
-            controller: inputkapas1,
-            subtitle: '₹/Bale',
-          ),
+        child: ListView(
+      children: [
+        // Yarn Count
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Yarn Count',
+          controller: inputghati1,
+          subtitle: '',
+        ),
 
-          // Expense
-          GlobalRowWidget(
-            height: Global_Singal_Textfied_Height,
-            width: Global_Singal_Textfied_Width,
-            title: 'Expense',
-            controller: inputexpense1,
-            subtitle: '₹/20kg',
-          ),
+        //Cotton Rate
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Cotton Rate',
+          controller: inputexpense1,
+          subtitle: '₹/Bale',
+        ),
 
-          // Cotton Seed
-          GlobalRowWidget(
-            height: Global_Singal_Textfied_Height,
-            width: Global_Singal_Textfied_Width,
-            title: 'Cotton Seed',
-            controller: inputkapasia1,
-            subtitle: '₹/20kg',
-          ),
+        //  Result Cotton Rate
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Cotton Rate',
+          subtext: '',
+        ),
 
-          // Out Turn / Utaro
-          GlobalRowWidget(
-            height: Global_Singal_Textfied_Height,
-            width: Global_Singal_Textfied_Width,
-            title: 'Out Turn / Utaro',
-            controller: inpututaro1,
-            subtitle: 'Percentage %',
-          ),
+        // Yield
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Yield',
+          controller: inputexpense1,
+          subtitle: 'Percentage %',
+        ),
 
-          // Shortage / Ghati
-          GlobalRowWidget(
-            height: Global_Singal_Textfied_Height,
-            width: Global_Singal_Textfied_Width,
-            title: 'Shortage / Ghati',
-            controller: inputghati1,
-            subtitle: 'Percentage %',
-          ),
+        // Waste Recovery
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Waste Recovery',
+          controller: inputexpense1,
+          subtitle: '₹/kg',
+        ),
 
-          SizedBox(height: 30.h),
+        // Material Coast
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Materail Coast',
+          subtext: '',
+        ),
 
-          // Dispaly Stream Text
-          Global_Stream_Builder_For_Results_View_Only_Without_Result(
-            stream: 'result_final_output_padtar1.stream',
-            substreamtext: '₹/20Kg',
-            streamtitletext: 'Kapas Coast',
-          ),
+        // Coversation Coast
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Coversation Coast',
+          controller: inputexpense1,
+          subtitle: '₹/kg/Count',
+        ),
 
-          // Reset Button
-          Global_Button_Simple_Text(
-            onPressed: () {
-              inputkapas1.clear();
-              inputexpense1.clear();
-              inputkapasia1.clear();
-              inpututaro1.clear();
-              inputghati1.clear();
+        // Commission
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Commission',
+          controller: inputexpense1,
+          subtitle: 'Percentage %',
+        ),
 
-              focusnodekapas1.requestFocus();
-            },
-            buttontext: 'Reset',
-            height: Global_Singal_Reset_Button_Height,
-            width: Global_Singal_Reset_Button_Width,
-          ),
+        // Other Expense
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Other Expense',
+          controller: inputghati1,
+          subtitle: '₹/kg',
+        ),
 
-          //Compare Button
-          Global_Button_Gradient_Text(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => Home_Compare_Ginning_Calculator(
-              //       for_or_reverse: false,
-              //     ),
-              //   ),
-              // );
-            },
-            buttontext: 'Compare',
-            height: Global_Singal_Comare_Button_Height,
-            width: Global_Singal_Comare_Button_Width,
-          ),
-        ],
-      ),
-    );
+        //Yarn Coast
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Yarn Coast',
+          subtext: '',
+        ),
+
+        //Yarn Rate
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Yarn Rate',
+          controller: inputghati1,
+          subtitle: '₹/kg',
+        ),
+
+        //Loss
+        GlobalRowWidget(
+          height: Global_Singal_Textfied_Height,
+          width: Global_Singal_Textfied_Width,
+          title: 'Loss',
+          controller: inputghati1,
+          subtitle: '₹/kg',
+        ),
+
+        //  Result Cotton Coast
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Cotton Coast',
+          subtext: '',
+        ),
+
+        // Reset Button
+        Global_Button_Simple_Text(
+          onPressed: () {
+            inputkapas1.clear();
+            inputexpense1.clear();
+            inputkapasia1.clear();
+            inpututaro1.clear();
+            inputghati1.clear();
+
+            focusnodekapas1.requestFocus();
+          },
+          buttontext: 'Reset',
+          height: Global_Singal_Reset_Button_Height,
+          width: Global_Singal_Reset_Button_Width,
+        ),
+
+        //Compare Button
+        Global_Button_Gradient_Text(
+          onPressed: () {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => Home_Compare_Ginning_Calculator(
+            //       for_or_reverse: true,
+            //     ),
+            //   ),
+            // );
+          },
+          buttontext: 'Compare',
+          height: Global_Singal_Comare_Button_Height,
+          width: Global_Singal_Comare_Button_Width,
+        ),
+
+        SizedBox(
+          height: 20.h,
+        )
+      ],
+    ));
   }
 }

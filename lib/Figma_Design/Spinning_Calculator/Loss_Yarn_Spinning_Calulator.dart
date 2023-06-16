@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../Globaly Accesible/Buttons.dart';
 import '../../Globaly Accesible/Row widget with 3 items.dart';
 import '../../Globaly Accesible/Screen Size Varibles.dart';
-import '../../Globaly Accesible/Stream Builder For Results.dart';
+import '../../Globaly Accesible/Spinning answer with stream builder.dart';
 
 class Loss_Yarn_Spinning_Calculator extends StatefulWidget {
   const Loss_Yarn_Spinning_Calculator({Key? key}) : super(key: key);
@@ -89,10 +90,6 @@ class _Loss_Yarn_Spinning_CalculatorState
 
   @override
   Widget build(BuildContext context) {
-    double FixedHeight = MediaQuery.of(context).size.height;
-    double FixedWidth = MediaQuery.of(context).size.width;
-
-    var result_final_output_padtar1;
     return Container(
         child: ListView(
       children: [
@@ -115,10 +112,10 @@ class _Loss_Yarn_Spinning_CalculatorState
         ),
 
         //  Result Cotton Rate
-        Global_Stream_Builder_For_Results_View_Only_Without_Result(
-          stream: "result_final_output_padtar1.stream",
-          substreamtext: '',
-          streamtitletext: 'Cotton Rate ',
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Cotton Rate',
+          subtext: '',
         ),
 
         // Yield
@@ -140,10 +137,10 @@ class _Loss_Yarn_Spinning_CalculatorState
         ),
 
         // Material Coast
-        Global_Stream_Builder_For_Results_View_Only_Without_Result(
-          stream: "result_final_output_padtar1.stream",
-          substreamtext: '',
-          streamtitletext: 'Material Coast',
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Materail Coast',
+          subtext: '',
         ),
 
         // Coversation Coast
@@ -174,10 +171,10 @@ class _Loss_Yarn_Spinning_CalculatorState
         ),
 
         //Yarn Coast
-        Global_Stream_Builder_For_Results_View_Only_Without_Result(
-          stream: "result_final_output_padtar1.stream",
-          substreamtext: '',
-          streamtitletext: 'Yarn Coast',
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Yarn Coast',
+          subtext: '',
         ),
 
         //Yarn Rate
@@ -199,10 +196,10 @@ class _Loss_Yarn_Spinning_CalculatorState
         ),
 
         //  Result Cotton Coast
-        Global_Stream_Builder_For_Results_View_Only_Without_Result(
-          stream: "result_final_output_padtar1.stream",
-          substreamtext: '',
-          streamtitletext: 'Cotton Coast',
+        spinning_answer_With_Stream_Builder(
+          stream: '',
+          title: 'Cotton Coast',
+          subtext: '',
         ),
 
         // Reset Button
@@ -237,6 +234,10 @@ class _Loss_Yarn_Spinning_CalculatorState
           height: Global_Singal_Comare_Button_Height,
           width: Global_Singal_Comare_Button_Width,
         ),
+
+        SizedBox(
+          height: 20.h,
+        )
       ],
     ));
   }

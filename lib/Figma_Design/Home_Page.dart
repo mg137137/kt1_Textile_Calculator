@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Globaly Accesible/Globle_Access_Variables.dart';
 import '../Globaly Accesible/Home Page Box Container.dart';
+
 import 'Exports_Calculation/Home_Export_Calculation.dart';
 import 'Ginning_Calculator/Singal_Ginning_Calculator/Home_Singal_Ginning_Calculator.dart';
 import 'ICE_Parity_Chart/Home_ICE_Parity_Chart.dart';
 import 'Oil_Mill_Calculator/Singal_Oil_Mill_Calculator/Home_Singal_Oil_Mill_Calculator.dart';
 import 'Spinning_Calculator/Home_Spinning_Calculator.dart';
+import 'Staple Conversation Chart/Staple Conversation Chart.dart';
 
 class Home_Page extends StatefulWidget {
   const Home_Page({Key? key}) : super(key: key);
@@ -193,7 +195,12 @@ class _Home_PageState extends State<Home_Page> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Home_Page_Box_Container(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Staple_Conversation_Chart()));
+                  },
                   imageAsset: 'assets/splash.png',
                   buttonText: 'Staple Conversation Chart',
                 ),

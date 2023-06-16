@@ -14,27 +14,7 @@ class Home_Spinning_Calculator extends StatefulWidget {
 
 class _Home_Spinning_CalculatorState extends State<Home_Spinning_Calculator>
     with SingleTickerProviderStateMixin {
-  bool _isFirstButtonSelected1 = true;
-  bool isButtonSelected = false;
-  late TabController _tabController1;
-
-  void _onButtonPressed(bool isFirstButton) {
-    setState(() {
-      _isFirstButtonSelected1 = isFirstButton;
-    });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _tabController1.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController1 = TabController(length: 2, vsync: this);
-  }
+  bool _isForwardGinning = true;
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +23,31 @@ class _Home_Spinning_CalculatorState extends State<Home_Spinning_Calculator>
         SliderText1: 'Loss Yarn',
         SliderText2: 'Profit Yarn',
         AppbarText: 'Spinning Calculator',
-        isFirstButtonSelected: _isFirstButtonSelected1,
-        onButtonPressed: _onButtonPressed,
+        isFirstButtonSelected: _isForwardGinning,
+        onButtonPressed: (bool isFirstButton) {
+          setState(() {
+            _isForwardGinning = isFirstButton;
+          });
+        },
       ),
-      // body: SingleChildScrollView(
-      //     child: Forwarding_Both_Forward_And_Reverse_Page(context)),
-
-      body: _isFirstButtonSelected1
-          ? const Loss_Yarn_Spinning_Calculator()
-          : const Profit_Yarn_Spinning_Calculator(),
+      body: GestureDetector(
+        onHorizontalDragEnd: (DragEndDetails details) {
+          if (details.primaryVelocity! > 0) {
+            // Swiped from left to right
+            setState(() {
+              _isForwardGinning = true;
+            });
+          } else if (details.primaryVelocity! < 0) {
+            // Swiped from right to left
+            setState(() {
+              _isForwardGinning = false;
+            });
+          }
+        },
+        child: _isForwardGinning
+            ? const Loss_Yarn_Spinning_Calculator()
+            : const Profit_Yarn_Spinning_Calculator(),
+      ),
     );
   }
 }

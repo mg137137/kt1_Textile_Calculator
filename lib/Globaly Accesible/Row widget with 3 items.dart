@@ -45,24 +45,30 @@ class GlobalRowWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20.w, 0, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                 alignment: Alignment.centerLeft,
                 height: 120.h,
                 width: 400.w,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.black,
-                    width: 1.1,
+                    width: 5.sp,
                   ),
                   color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(70.sp),
                 ),
                 child: TextField(
-                  // textAlign: TextAlign.center,
+                  maxLines: 1,
+                  textAlign: TextAlign.left,
                   controller: controller,
-                  style: TextStyle(fontSize: 65.sp, color: Colors.black),
+                  cursorColor: Colors.black,
+                  cursorHeight: 60.sp,
+                  style: TextStyle(fontSize: 60.sp, color: Colors.black),
                   decoration: InputDecoration(
-                    border: InputBorder.none,
+                    // fillColor: Colors.red,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(70.sp)),
                   ),
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -77,11 +83,14 @@ class GlobalRowWidget extends StatelessWidget {
               //sub text
               Container(
                 width: 200.w,
-                child: Text(
-                  subtitle,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 0.012.sh, color: Colors.black),
+                child: Tooltip(
+                  message: subtitle,
+                  child: Text(
+                    subtitle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 30.sp, color: Colors.black),
+                  ),
                 ),
               ),
             ],

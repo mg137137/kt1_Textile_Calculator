@@ -44,24 +44,31 @@ class GlobalRowCompareWidget extends StatelessWidget {
 
           //Text field 1
           Container(
-            padding: EdgeInsets.fromLTRB(20.w, 0, 0, 0),
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
             alignment: Alignment.centerLeft,
             height: 120.h,
             width: 400.w,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black,
-                width: 1.1,
+                width: 5.sp,
               ),
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(70.sp),
             ),
             child: TextField(
               // textAlign: TextAlign.center,
+              maxLines: 1,
+              textAlign: TextAlign.left,
               controller: controller,
-              style: TextStyle(fontSize: 65.sp, color: Colors.black),
+              cursorColor: Colors.black,
+              cursorHeight: 60.sp,
+              style: TextStyle(fontSize: 60.sp, color: Colors.black),
               decoration: InputDecoration(
-                border: InputBorder.none,
+                // fillColor: Colors.red,
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(70.sp)),
               ),
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -125,16 +132,19 @@ class GlobalRowCompareWidget2textfiels extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black,
-                width: 1.1,
+                width: 5.sp,
               ),
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(70.sp),
             ),
             child: TextField(
-              // textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               controller: controller1,
-              style: TextStyle(fontSize: 65.sp, color: Colors.black),
+              cursorColor: Colors.black,
+              cursorHeight: 60.sp,
+              style: TextStyle(fontSize: 60.sp, color: Colors.black),
               decoration: InputDecoration(
+                // hintText: subtitle,
                 border: InputBorder.none,
               ),
               keyboardType: TextInputType.number,
@@ -153,16 +163,19 @@ class GlobalRowCompareWidget2textfiels extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black,
-                width: 1.1,
+                width: 5.sp,
               ),
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(70.sp),
             ),
             child: TextField(
-              // textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               controller: controller2,
-              style: TextStyle(fontSize: 65.sp, color: Colors.black),
+              cursorColor: Colors.black,
+              cursorHeight: 60.sp,
+              style: TextStyle(fontSize: 60.sp, color: Colors.black),
               decoration: InputDecoration(
+                // hintText: subtitle,
                 border: InputBorder.none,
               ),
               keyboardType: TextInputType.number,
@@ -362,64 +375,53 @@ class GlobalRowCompareWidget2StreamBuilder extends StatelessWidget {
           //Title
           Container(
             width: 500.w,
+            child: Text(
+              title1,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 60.sp,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
 
           //Text field 1
           Container(
             padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
             alignment: Alignment.center,
-            height: 200.h,
+            height: 110.h,
             width: 400.w,
             decoration: BoxDecoration(
-                border: Border.all(width: 5.sp),
-                borderRadius: BorderRadius.circular(20.sp)),
-            child: Column(
-              children: [
-                Text(
-                  title1,
-                  style: TextStyle(color: Colors.black, fontSize: 60.sp),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: 380.w,
-                  height: 110.h,
-                  margin: EdgeInsets.fromLTRB(10.w, 2.h, 10.w, 2.h),
-                  decoration: BoxDecoration(
-                    // border: Border.all(
-                    //   color: Colors.black,
-                    //   width: 1.0,
-                    // ),
-                    // boxShadow: [BoxShadow(blurRadius: 50)],
-                    color: Colors.grey,
-                    gradient: LinearGradient(
-                        colors: [Colors.black54, Colors.blueGrey]),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: StreamBuilder<double>(
-                    stream: stream1,
-                    builder:
-                        (BuildContext context, AsyncSnapshot<double> snapshot) {
-                      if (snapshot.hasData) {
-                        return Tooltip(
-                          message: '${snapshot.data}' + ' $subtext1',
-                          child: Text(
-                            '${snapshot.data}' + ' $subtext1',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 60.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        );
-                      } else {
-                        return Text('0');
-                      }
-                    },
-                  ),
-                ),
-              ],
+              // border: Border.all(
+              //   color: Colors.black,
+              //   width: 1.0,
+              // ),
+              // boxShadow: [BoxShadow(blurRadius: 50)],
+              color: Colors.grey,
+              gradient:
+                  LinearGradient(colors: [Colors.black54, Colors.blueGrey]),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: StreamBuilder<double>(
+              stream: stream1,
+              builder: (BuildContext context, AsyncSnapshot<double> snapshot) {
+                if (snapshot.hasData) {
+                  return Tooltip(
+                    message: '${snapshot.data}' + ' $subtext1',
+                    child: Text(
+                      '${snapshot.data}' + ' $subtext1',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 60.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  );
+                } else {
+                  return Text('0');
+                }
+              },
             ),
           ),
 
@@ -427,56 +429,35 @@ class GlobalRowCompareWidget2StreamBuilder extends StatelessWidget {
           Container(
             padding: EdgeInsets.fromLTRB(0.w, 0, 0, 0),
             alignment: Alignment.center,
-            height: 200.h,
+            height: 110.h,
             width: 400.w,
             decoration: BoxDecoration(
-                border: Border.all(width: 5.sp),
-                borderRadius: BorderRadius.circular(20.sp)),
-            child: Column(
-              children: [
-                Text(
-                  title2,
-                  style: TextStyle(color: Colors.black, fontSize: 60.sp),
-                ),
-                // SizedBox(
-                //   height: FixedHeight * 0.005,
-                // ),
-                Container(
-                  alignment: Alignment.center,
-                  width: 380.w,
-                  height: 110.h,
-                  margin: EdgeInsets.fromLTRB(10.w, 2.h, 10.w, 2.h),
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    gradient: LinearGradient(
-                        colors: [Colors.black54, Colors.blueGrey]),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: StreamBuilder<double>(
-                    stream: stream2,
-                    builder: (BuildContext context,
-                        AsyncSnapshot<double> snapshot2) {
-                      if (snapshot2.hasData) {
-                        return Tooltip(
-                          message: '${snapshot2.data}' + ' $subtext2',
-                          child: Text(
-                            '${snapshot2.data}' + ' $subtext2',
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 60.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        );
-                      } else {
-                        return Text('0');
-                      }
-                    },
-                  ),
-                ),
-              ],
+              color: Colors.grey,
+              gradient:
+                  LinearGradient(colors: [Colors.black54, Colors.blueGrey]),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: StreamBuilder<double>(
+              stream: stream2,
+              builder: (BuildContext context, AsyncSnapshot<double> snapshot2) {
+                if (snapshot2.hasData) {
+                  return Tooltip(
+                    message: '${snapshot2.data}' + ' $subtext2',
+                    child: Text(
+                      '${snapshot2.data}' + ' $subtext2',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 60.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  );
+                } else {
+                  return Text('0');
+                }
+              },
             ),
           ),
         ],

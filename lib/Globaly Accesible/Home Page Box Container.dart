@@ -53,7 +53,7 @@ class Home_Page_Box_Container extends StatelessWidget {
                     message: buttonText,
                     child: Text(
                       buttonText,
-                      maxLines: 2,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: TextStyle(
